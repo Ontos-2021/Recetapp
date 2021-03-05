@@ -1,23 +1,13 @@
+import sqlite3
 
-import mariadb
-# Module Imports
-import mariadb
-import sys
+conn = sqlite3.connect("penuche.db")
 
-# Connect to MariaDB Platform
-try:
-    conn = mariadb.connect(
-        user="db_user",
-        password="db_user_passwd",
-        host="192.0.2.1",
-        port=3306,
-        database="employees"
+cursor = conn.cursor()
 
-    )
-except mariadb.Error as e:
-    print(f"Error connecting to MariaDB Platform: {e}")
-    sys.exit(1)
+cursor.execute("DROP TABLE IF EXISTS recetapp")
 
-# Get Cursor
-print("Hola")
-cur = conn.cursor()
+cursor.execute("CREATE TABLE IF NOT EXISTS recetapp(id integer PRIMARY KEY NOT NULL, nombre text)")
+
+conn.commit()
+
+conn.close()
