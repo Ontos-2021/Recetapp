@@ -1,13 +1,10 @@
 import sqlite3
 
-conn = sqlite3.connect("penuche.db")
+with open('recetapp.sql', 'r') as sql_file:
+    sql_script = sql_file.read()
 
-cursor = conn.cursor()
-
-cursor.execute("DROP TABLE IF EXISTS recetapp")
-
-cursor.execute("CREATE TABLE IF NOT EXISTS recetapp(id integer PRIMARY KEY NOT NULL, nombre text)")
-
-conn.commit()
-
-conn.close()
+db = sqlite3.connect('recetapp.db')
+cursor = db.cursor()
+cursor.executescript(sql_script)
+db.commit()
+db.close()
