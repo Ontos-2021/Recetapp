@@ -1,1 +1,0 @@
-print("Bueno, ¿Y qué pasa con los cabros?")
