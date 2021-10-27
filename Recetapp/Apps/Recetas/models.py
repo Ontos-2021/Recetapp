@@ -15,7 +15,6 @@ class Tienda(models.Model):
 
 class Ingrediente(models.Model):
     nombre = models.CharField(max_length=50)
-    cantidad = models.IntegerField
     unidad = models.ForeignKey(Unidad, on_delete=models.DO_NOTHING)
     tienda = models.ManyToManyField(Tienda)
 
@@ -25,3 +24,4 @@ class Receta(models.Model):
     tiempo = models.IntegerField
     vegano = models.BooleanField
     ingrediente = models.ManyToManyField(Ingrediente)
+    cantidad = models.IntegerField
