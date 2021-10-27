@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `recetas_ingredientes` (
 
 INSERT INTO tiendas VALUES (1, "Verdulería", "Lunes a Viernes 10:00 a 20:00, Sábado 10:00 a 18:00");
 INSERT INTO tiendas VALUES (2, "Dietética", "Lunes a Viernes 10:00 a 20:00, Sábado 10:00 a 18:00");
-INSERT INTO tiendas VALUES (3, "Chino", "Lunes a Domingo 90:00 a 22:00");
+INSERT INTO tiendas VALUES (3, "Chino", "Lunes a Domingo 9:00 a 22:00");
 INSERT INTO tiendas VALUES (4, "Supermercado", "Lunes a Viernes 10:00 a 21:00, Sábado 10:00 a 18:00");
 
 INSERT INTO unidades VALUES (1, "gramos", "g");
