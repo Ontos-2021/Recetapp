@@ -15,7 +15,7 @@ class Tienda(models.Model):
 
 class Ingrediente(models.Model):
     nombre = models.CharField(max_length=50)
-    unidad = models.ForeignKey(Unidad)
+    unidad = models.ForeignKey(Unidad, on_delete=models.DO_NOTHING)
     tienda = models.ManyToManyField(Tienda)
 
 
