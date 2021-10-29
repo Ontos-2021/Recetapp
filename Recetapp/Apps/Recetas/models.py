@@ -30,10 +30,10 @@ class Ingrediente(models.Model):
 
 class Receta(models.Model):
     nombre = models.CharField(max_length=50)
-    tiempo = models.IntegerField
-    vegano = models.BooleanField
+    tiempo = models.IntegerField(blank=True, null=True)
+    vegano = models.BooleanField(null=True)
     ingrediente = models.ManyToManyField(Ingrediente)
-    cantidad = models.IntegerField
+    cantidad = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.nombre
