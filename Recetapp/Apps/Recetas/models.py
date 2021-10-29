@@ -49,3 +49,6 @@ class TiendaIngrediente(models.Model):
     tienda = models.ForeignKey(Tienda, on_delete=models.CASCADE)
     ingrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE)
     precio = models.FloatField()
+
+    def __str__(self):
+        return str(self.tienda) + " => " + str(self.ingrediente)
