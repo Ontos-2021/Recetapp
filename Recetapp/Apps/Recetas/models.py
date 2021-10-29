@@ -51,4 +51,4 @@ class TiendaIngrediente(models.Model):
     precio = models.FloatField()
 
     def __str__(self):
-        return str(self.tienda) + " => " + str(self.ingrediente)
+        return "Tienda: " + str(self.tienda) + " | Ingrediente: " + str(self.ingrediente)
