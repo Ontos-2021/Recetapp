@@ -1,10 +1,11 @@
 from django.shortcuts import render
+from Recetapp.Apps.Recetas.models import Receta
 
 
 # Create your views here.
 
 def index(request):
 
-    test = {}
+    recetas = Receta.objects.all()
 
-    return render(request, "index.html", test)
+    return render(request, "index.html", {"recetas": recetas})
