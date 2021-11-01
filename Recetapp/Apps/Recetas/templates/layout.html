@@ -13,6 +13,8 @@
     </header>
     <nav>
         <!-- Barra de navegación -->
+        <a href="{% url 'index' %}">Home</a>
+        <a href="http://127.0.0.1:8000/admin/">Sitio de administrador</a>
     </nav>
     <main>
         
@@ -23,7 +25,7 @@
         {% endblock %}
 
         <footer>
-            Recetapp | Derechos Reservados {% now "d/m/y - H:i" %}
+            Recetapp | Derechos Reservados | {% now "d/m/y" %}
         </footer>
 
     </main>
