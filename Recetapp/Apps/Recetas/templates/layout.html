@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recetapp</title>
+    <title>Recetapp | {% block title %}{% endblock %}</title>
 </head>
 <body>
     <header>
         <h1>¡Hola! Bienvenido/a a Recetapp</h1>
         <p>Recetap es una aplicación para gestionar tus recetas preferidas</p>
     </header>
+    <nav>
+        <!-- Barra de navegación -->
+    </nav>
     <main>
         
-        {% for receta in recetas %}
+        {% block content %}
 
-            <div class="receta">
+            <!-- Código que viene desde los templates -->
 
-                <h2>{{ receta }}</h2>
+        {% endblock %}
 
-                <p>Tiempo: {{ receta.tiempo }}</p>
-
-            </div>
-
-        {% endfor %}
+        <footer>
+            Recetapp | Derechos Reservados {% now "d/m/y" %}
+        </footer>
 
     </main>
 </body>

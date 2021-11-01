@@ -1,13 +1,17 @@
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recetapp</title>
-</head>
-<body>
-    <h1>¡Hola! Bienvenido/a a Recetapp</h1>
-    <p>Recetap es una aplicación para gestionar tus recetas preferidas</p>
+<!-- Con este comando esta plantilla se integra en layout.html -->
+{% extends 'layout.html' %}
+
+<!-- Bloque para el título de la plantilla -->
+
+{% block title %}
+
+    Home
+
+{% endblock %}
+
+<!-- Contenido que irá al bloque de contenido del layout -->
+
+{% block content %}
 
     {% for receta in recetas %}
 
@@ -20,5 +24,5 @@
         </div>
 
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
