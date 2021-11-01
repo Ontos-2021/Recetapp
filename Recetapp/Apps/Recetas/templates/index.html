@@ -17,9 +17,15 @@
 
         <div class="receta">
 
-            <h2>{{ receta }}</h2>
+            <h2>{{ receta.nombre }}</h2>
 
                 <p>Tiempo: {{ receta.tiempo }}</p>
+                
+                {% if receta.vegano == True %}
+                    <p>Es vegano: Sí</p>
+                 {% else %}
+                    <p>Es vegano: No</p>
+                {% endif %}
 
         </div>
 
