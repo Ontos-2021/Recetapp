@@ -13,22 +13,9 @@
 
 {% block content %}
 
-    {% for receta in recetas %}
+    <h2>Recetapp es un proyecto hecho con <strong>Django</strong></h2>
+    
+    <p>Django de un framework web escrito en Python. Recetapp es un proyecto para poder practicar django y también para poder gestionar nuestras recetas y compras.</p>
 
-        <div class="receta">
-
-            <h2>{{ receta.nombre }}</h2>
-
-                <p>Tiempo: {{ receta.tiempo }}</p>
-                
-                {% if receta.vegano == True %}
-                    <p>Es vegano: Sí</p>
-                 {% else %}
-                    <p>Es vegano: No</p>
-                {% endif %}
-
-        </div>
-
-    {% endfor %}
 
 {% endblock %}

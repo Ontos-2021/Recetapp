@@ -1,0 +1,34 @@
+<!-- Con este comando esta plantilla se integra en layout.html -->
+{% extends 'layout.html' %}
+
+<!-- Bloque para el título de la plantilla -->
+
+{% block title %}
+
+    Recetas
+
+{% endblock %}
+
+<!-- Contenido que irá al bloque de contenido del layout -->
+
+{% block content %}
+
+    {% for receta in recetas %}
+
+        <div class="receta">
+
+            <h2>{{ receta.nombre }}</h2>
+
+                <p>Tiempo: {{ receta.tiempo }}</p>
+                
+                {% if receta.vegano == True %}
+                    <p>Es vegano: Sí</p>
+                 {% else %}
+                    <p>Es vegano: No</p>
+                {% endif %}
+
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

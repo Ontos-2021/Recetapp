@@ -6,6 +6,11 @@ from Recetapp.Apps.Recetas.models import Receta
 
 def index(request):
 
+    return render(request, "index.html")
+
+
+def recetas(request):
+
     recetas = Receta.objects.all()
 
-    return render(request, "index.html", {"recetas": recetas})
+    return render(request, "recetas.html", {"recetas": recetas})
