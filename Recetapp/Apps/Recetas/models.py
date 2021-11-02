@@ -31,6 +31,7 @@ class Receta(models.Model):
     nombre = models.CharField(max_length=50)
     tiempo = models.IntegerField(blank=True, null=True)
     vegano = models.BooleanField(null=True)
+    ingredientes = models.ManyToManyField(Ingrediente, through='RecetaIngrediente')
 
     def __str__(self):
         return self.nombre

@@ -12,5 +12,6 @@ def index(request):
 def recetas(request):
 
     recetas = Receta.objects.all()
+    print(type(recetas))
 
     return render(request, "recetas.html", {"recetas": recetas})
