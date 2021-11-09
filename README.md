@@ -12,7 +12,7 @@ El proyecto aún está en desarrollo, sin embargo puedes ver cómo va quedando :
 - Clonar el repositorio con el siguiente comando (para este paso debes tener [Git](https://git-scm.com/downloads "Descargar Git") instalado en tu computador)
 
   `git clone https://github.com/Ontos-2021/Recetapp.git`
-  - Si no puedes simplemente descargar el [ZIP](https://github.com/Ontos-2021/Recetapp/archive/refs/heads/main.zip "Descargar Zip")
+  - Si no tienes Git, puedes simplemente descargar el [ZIP](https://github.com/Ontos-2021/Recetapp/archive/refs/heads/main.zip "Descargar Zip")
 - Después tienes que ingresar a la carpeta del proyecto
 
   `cd Recetapp`
@@ -21,18 +21,26 @@ El proyecto aún está en desarrollo, sin embargo puedes ver cómo va quedando :
   `python -m venv env`
 - Activar el entorno virtual
   
-  `env\Scripts\activate (Windows)`
+  `env\Scripts\activate (Windows)` o `source env/bin/activate (En Mac)` 
 - Descargar Django
 
   `(env)> pip install django`
-- Finalmente puedes iniciar el proyecto con el siguiente comando `python manage.py runserver`
+- Luego tienes que iniciar el proyecto con el siguiente comando `(env)> python manage.py runserver`
 
+- En la consola te la sadrá algo parecido a esto
+  
+  ```
+  Django version 3.2.9, using settings 'Recetapp.settings'
+  Starting development server at http://127.0.0.1:8000/
+  Quit the server with CTRL-BREAK.
+  ```
+- Finalmente tienes que ingresar la ruta `http://127.0.0.1:8000/` a tu navegador web y listo
 ### También puedes crear un superusuario.
 
 Creando un superusuario puedes gestionar la base de datos desde el sitio de administrador de Django.
 Ingresa este comando y luego ingresas un usuario, contraseña y un e-mail de recuperación.
 
-`python manage.py createsuperuser`
+`(env)> python manage.py createsuperuser`
 
 ---
 
