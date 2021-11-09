@@ -37,6 +37,9 @@ Ingresa este comando y luego ingresas un usuario, contraseña y un e-mail de rec
 
 ## Modelo de la base de datos
 
-El modelo está hecho con [Mysql Workbench](Recetapp.mwb "Archivo MySql Workbench")
+- El modelo está hecho con [Mysql Workbench](Recetapp.mwb "Archivo MySql Workbench")
+
+- El modelo en el proyecto de django está representado en el archivo [```models.py```](Recetapp/Apps/Recetas/models.py "Modelo en el proyecto")
 
 ![Modelo de la base de datos hecha en MySql Workbench](Recetapp%20(Modelo).png "Modelo") 
+
