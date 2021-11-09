@@ -7,31 +7,32 @@ El proyecto aún está en desarrollo, sin embargo puedes ver cómo va quedando :
 
 ## ¿Que hay que hacer para correr el proyecto?
 
-- Primero tienes que clonar el repositorio
+- Primero tienes que ir a una carpeta donde quieras que esté el proyecto
+- Abrir la terminal 
+- Clonar el repositorio con el siguiente comando (para este paso debes tener [Git](https://git-scm.com/downloads "Descargar Git") instalado en tu computador)
 
-    ``` > git clone https://github.com/Ontos-2021/Recetapp.git ```
+  `git clone https://github.com/Ontos-2021/Recetapp.git`
+  - Si no puedes simplemente descargar el [ZIP](https://github.com/Ontos-2021/Recetapp/archive/refs/heads/main.zip "Descargar Zip")
+- Después tienes que ingresar a la carpeta del proyecto
 
+  `cd Recetapp`
+- Crear un entorno virtual de python
 
-- Después tienes que ingresar a la carpeta, crear un entorno virtual de python y descargar Django.
-    ```
-  > cd Recetapp
-  > 
-  > python -m venv env
-  > 
-  > env\Scripts\activate (Windows)
-  > 
-  > (env) pip install django
-  ```
+  `python -m venv env`
+- Activar el entorno virtual
+  
+  `env\Scripts\activate (Windows)`
+- Descargar Django
 
-- Finalmente puedes iniciar el proyecto con el siguiente comando
-` > python manage.py runserver `
+  `(env)> pip install django`
+- Finalmente puedes iniciar el proyecto con el siguiente comando `python manage.py runserver`
 
 ### También puedes crear un superusuario.
 
 Creando un superusuario puedes gestionar la base de datos desde el sitio de administrador de Django.
 Ingresa este comando y luego ingresas un usuario, contraseña y un e-mail de recuperación.
 
-` > python manage.py createsuperuser `
+`python manage.py createsuperuser`
 
 ---
 
