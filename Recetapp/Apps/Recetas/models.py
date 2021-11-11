@@ -40,7 +40,7 @@ class Receta(models.Model):
 class RecetaIngrediente(models.Model):
     receta = models.ForeignKey(Receta, on_delete=models.CASCADE)
     ingrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE)
-    cantidad = models.IntegerField(blank=True, null=True)
+    cantidad = models.IntegerField(default=1, blank=True, null=True)
 
     def __str__(self):
         return "Receta: " + str(self.receta) + " | " + str(self.cantidad) + " " + str(self.ingrediente)
@@ -49,7 +49,7 @@ class RecetaIngrediente(models.Model):
 class TiendaIngrediente(models.Model):
     tienda = models.ForeignKey(Tienda, on_delete=models.CASCADE)
     ingrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE)
-    precio = models.FloatField()
+    precio = models.FloatField(null=True)
 
     def __str__(self):
         return "Tienda: " + str(self.tienda) + " | Ingrediente: " + str(self.ingrediente)
