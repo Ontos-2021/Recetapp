@@ -12,8 +12,5 @@ def index(request):
 def recetas(request):
 
     recetas = Receta.objects.all()
-    ingredientesPizza = RecetaIngrediente.objects.all()
-    for ingrediente in ingredientesPizza:
-        print(ingrediente.receta)
 
     return render(request, "recetas.html", {"recetas": recetas})

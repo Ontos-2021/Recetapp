@@ -19,15 +19,19 @@
 
             <h2>{{ receta.nombre }}</h2>
 
-                <p>Tiempo: {{ receta.tiempo }}</p>
+                <p><b>Tiempo:</b> {{ receta.tiempo }}</p>
                 
                 {% if receta.vegano == True %}
-                    <p>Es vegano: Sí</p>
+                    <p><b>Es vegano:</b> Sí</p>
                  {% else %}
-                    <p>Es vegano: No</p>
+                    <p><b>Es vegano:</b> No</p>
                 {% endif %}
 
-                {{ receta.ingredientes }}
+                {% for recetaingrediente in receta.recetaingrediente_set.all %}
+
+                    <p><b>{{ recetaingrediente.cantidad }}</b> {{ recetaingrediente.ingrediente }}</p>
+
+                {% endfor %}
 
         </div>
 

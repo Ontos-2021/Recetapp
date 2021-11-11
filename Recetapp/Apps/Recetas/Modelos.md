@@ -65,4 +65,59 @@ AttributeError: 'Ingrediente' object has no attribute 'TiendaIngrediente'
 <QuerySet [<TiendaIngrediente: Tienda: Dietética | Ingrediente: Algas Nori>, <TiendaIngrediente: Tienda: Dietética | Ingrediente: Salmón>]>
 >>>
 ```
+
+Este es el comando para importar los modelos en la shell `>>> from Recetapp.Apps.Recetas.models import *`
+
+---
+
+## ¿Por qué no funciona?
+
+```
+<!-- Con este comando esta plantilla se integra en layout.html -->
+{% extends 'layout.html' %}
+
+<!-- Bloque para el título de la plantilla -->
+
+{% block title %}
+
+    Recetas
+
+{% endblock %}
+
+<!-- Contenido que irá al bloque de contenido del layout -->
+
+{% block content %}
+
+    {% for receta in recetas %}
+
+        <div class="receta">
+
+            <h2>{{ receta.nombre }}</h2>
+
+                <p>Tiempo: {{ receta.tiempo }}</p>
+                
+                {% if receta.vegano == True %}
+                    <p>Es vegano: Sí</p>
+                 {% else %}
+                    <p>Es vegano: No</p>
+                {% endif %}
+
+                {% for recetaingrediente in receta.recetaingrediente_set.all %}
+
+                    {{ recetaingrediente }}
+
+                [% endfor %}
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
+```
+
+Me dice esto el error
+
+```
+TemplateSyntaxError at /recetas
+Invalid block tag on line 39: 'endblock', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+```
   
