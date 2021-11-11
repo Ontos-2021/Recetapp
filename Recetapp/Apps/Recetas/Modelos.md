@@ -68,6 +68,16 @@ AttributeError: 'Ingrediente' object has no attribute 'TiendaIngrediente'
 
 Este es el comando para importar los modelos en la shell `>>> from Recetapp.Apps.Recetas.models import *`
 
+Algunos comando que me han funcionado son los siguientes:
+
+- Para actualizar un registro:
+
+  -     Receta.objects.filter(id=4).update(descripcion='Una clásica receta Italiana. También muy común en la ciudad de Buenos Aires')
+
+- Para obtener un valor:
+
+  -     Receta.objects.get(id=4).descripcion
+        'Una clásica receta Italiana. También muy común en la ciudad de Buenos Aires'  
 ---
 
 ## ¿Por qué no funciona?
