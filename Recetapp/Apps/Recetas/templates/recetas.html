@@ -13,28 +13,36 @@
 
 {% block content %}
 
-    
-
     <div class="container">
         <div class="row">
+
             {% for receta in recetas %}
+            
                 <div class="col-xl-4 col-md-6 col-12">
-                    <h2>{{ receta.nombre }}</h2>
-                        <p><b>Tiempo:</b> {{ receta.tiempo }}</p>
-                
-                        {% if receta.vegano == True %}
-                            <p><b>Es vegano:</b> Sí</p>
-                        {% else %}
-                            <p><b>Es vegano:</b> No</p>
-                        {% endif %}
-                        {% for recetaingrediente in receta.recetaingrediente_set.all %}
-                            <p><b>{{ recetaingrediente.cantidad }}</b> {{ recetaingrediente.ingrediente }}</p>
-                        {% endfor %}
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ receta.nombre }}</h5>
+                          <p class="card-text">Descripción de la receta</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Tiempo:</b> {{ receta.tiempo }}</li>
+                            <li class="list-group-item">
+                                {% if receta.vegano == True %}
+                                    <p><b>Es vegano:</b> Sí</p>
+                                {% else %}
+                                    <p><b>Es vegano:</b> No</p>
+                                {% endif %}
+                            </li>
+                            {% for recetaingrediente in receta.recetaingrediente_set.all %}
+                                <li class="list-group-item"><b>{{ recetaingrediente.cantidad }}</b> {{ recetaingrediente.ingrediente }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
+                
             {% endfor %}
+
         </div>
     </div>
-
-    
 
 {% endblock %}
