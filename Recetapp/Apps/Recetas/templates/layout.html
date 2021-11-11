@@ -10,8 +10,8 @@
 <body>
 
     <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+            <a class="navbar-brand" href="{% url 'index' %}">Inicio</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,12 +23,6 @@
             </div>
         </div>
     </nav>
-
-    <header>
-        <h1>¡Hola! Bienvenido/a a Recetapp</h1>
-        <p>Recetap es una aplicación para gestionar tus recetas preferidas</p>
-    </header>
-
     <main>
         
         {% block content %}

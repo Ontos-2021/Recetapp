@@ -12,25 +12,33 @@
 <!-- Contenido que irá al bloque de contenido del layout -->
 
 {% block content %}
+    
+
+    <div class="container-fluid">
+        <header>
+            <h1 class="text-center">¡Recetas!</h1>
+            <p>En esta sección puedes revisar todas las recetas que tenemos para tí. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt quidem atque corporis quas asperiores eaque illo perspiciatis obcaecati vitae cum!</p>
+        </header>
+    </div>
 
     <div class="container">
         <div class="row">
 
             {% for receta in recetas %}
             
-                <div class="col-xl-4 col-md-6 col-12">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                          <h5 class="card-title">{{ receta.nombre }}</h5>
+                <div class="col-xl-4 col-sm-6 col-12 p-2 d-flex justify-content-center">
+                    <div class="card" style="width: 16rem;">
+                        <div class="card-body bg-light">
+                          <h4 class="card-title">{{ receta.nombre }}</h4>
                           <p class="card-text">Descripción de la receta</p>
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><b>Tiempo:</b> {{ receta.tiempo }}</li>
                             <li class="list-group-item">
                                 {% if receta.vegano == True %}
-                                    <p><b>Es vegano:</b> Sí</p>
+                                    <b>Es vegano:</b> Sí
                                 {% else %}
-                                    <p><b>Es vegano:</b> No</p>
+                                    <b>Es vegano:</b> No
                                 {% endif %}
                             </li>
                             {% for recetaingrediente in receta.recetaingrediente_set.all %}
@@ -39,7 +47,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
             {% endfor %}
 
         </div>
