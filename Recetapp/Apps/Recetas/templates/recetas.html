@@ -13,28 +13,28 @@
 
 {% block content %}
 
-    {% for receta in recetas %}
+    
 
-        <div class="receta">
-
-            <h2>{{ receta.nombre }}</h2>
-
-                <p><b>Tiempo:</b> {{ receta.tiempo }}</p>
+    <div class="container">
+        <div class="row">
+            {% for receta in recetas %}
+                <div class="col-xl-4 col-md-6 col-12">
+                    <h2>{{ receta.nombre }}</h2>
+                        <p><b>Tiempo:</b> {{ receta.tiempo }}</p>
                 
-                {% if receta.vegano == True %}
-                    <p><b>Es vegano:</b> Sí</p>
-                 {% else %}
-                    <p><b>Es vegano:</b> No</p>
-                {% endif %}
-
-                {% for recetaingrediente in receta.recetaingrediente_set.all %}
-
-                    <p><b>{{ recetaingrediente.cantidad }}</b> {{ recetaingrediente.ingrediente }}</p>
-
-                {% endfor %}
-
+                        {% if receta.vegano == True %}
+                            <p><b>Es vegano:</b> Sí</p>
+                        {% else %}
+                            <p><b>Es vegano:</b> No</p>
+                        {% endif %}
+                        {% for recetaingrediente in receta.recetaingrediente_set.all %}
+                            <p><b>{{ recetaingrediente.cantidad }}</b> {{ recetaingrediente.ingrediente }}</p>
+                        {% endfor %}
+                </div>
+            {% endfor %}
         </div>
+    </div>
 
-    {% endfor %}
+    
 
 {% endblock %}
