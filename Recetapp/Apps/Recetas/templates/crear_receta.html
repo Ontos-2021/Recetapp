@@ -12,7 +12,30 @@
 <!-- Contenido que irá al bloque de contenido del layout -->
 
 {% block content %}
-    
-    
+
+    <div class="container">
+        <form method="POST" action="{% url 'recetas:guardar-receta' %}">
+            
+            {% csrf_token %}
+
+            <div class="row my-4">
+                <div class="col">
+                    <label for="nombre" class="form-label">Example label</label>
+                    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                </div>
+                <div class="col">
+                    <label for="tiempo" class="form-label">Example label</label>
+                    <input type="number" class="form-control" placeholder="Last name" aria-label="Last name">
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col">
+                    <label for="descripcion" class="form-label">Descripción de la receta</label>
+                    <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
 
 {% endblock %}
