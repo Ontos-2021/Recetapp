@@ -14,3 +14,10 @@ def recetas(request):
     recetas = Receta.objects.all()
 
     return render(request, "recetas.html", {"recetas": recetas})
+
+
+def crear_receta(request):
+
+
+    pass
+    
