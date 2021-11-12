@@ -18,6 +18,5 @@ def recetas(request):
 
 def crear_receta(request):
 
-
-    pass
+    return render(request, "crear_receta.html")
     
